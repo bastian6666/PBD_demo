@@ -28,7 +28,7 @@ def display_map(geojson_data):
         'mapState': {
             'latitude': centroid.y,
             'longitude': centroid.x,
-            'zoom': 10  # Adjust zoom level as needed
+            'zoom': 8.8  # Adjust zoom level as needed
         }
     }
 
@@ -73,21 +73,23 @@ def main():
 
     elif choice == "LST":
         st.title("LST Data")
-        lst_option = st.selectbox("Choose format for LST", ("Image", "Map"))
-        if lst_option == "Image":
-            display_lst_image()
-        else:
+        lst_option = st.selectbox("Choose format for LST", ("Map", "Image"))
+        if lst_option == "Map":
             geojson_data = load_geojson()
             display_map(geojson_data)
+        else:
+            display_lst_image()
+            
 
     elif choice == "NDVI":
         st.title("NDVI Data")
-        ndvi_option = st.selectbox("Choose format for NDVI", ("Image", "Map"))
-        if ndvi_option == "Image":
-            display_ndvi_image()
-        else:
+        ndvi_option = st.selectbox("Choose format for NDVI", ("Map", "Image"))
+        if ndvi_option == "Map":
             geojson_data = load_geojson2()
             display_map(geojson_data)
+        else:
+            display_ndvi_image()
+            
 
 if __name__ == "__main__":
     main()
