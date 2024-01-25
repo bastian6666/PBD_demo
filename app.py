@@ -40,18 +40,18 @@ def display_map(geojson_data):
 
 # Function to display LST image
 def display_lst_image():
-    st.image('Figure_1.png', caption='LST Image')
+    st.image('LST_TCA.png', caption='LST Image')
 
 # Function to display NDVI image
 def display_ndvi_image():
-    st.image('Figure_1.png', caption='NDVI Image')
+    st.image('NDVI_TCA.png', caption='NDVI Image')
 
 def main():
     st.sidebar.title("Navigation")
     choice = st.sidebar.radio("Choose a view", ("Home", "LST", "NDVI"))
 
     if choice == "Home":
-        st.title("Welcome to My Streamlit App")
+        st.title("Pale Blue Dot Challenge 2024 - Team: EE Frogs")
         st.write("Navigate using the sidebar.")
 
         # Using markdown for formatted text
@@ -68,7 +68,7 @@ def main():
         """)
 
         # Adding a visual element - e.g., an image or graph
-        st.image('Figure_1.png', caption='Visualization Example')
+        st.image('home_image.png', caption='Turks and Caicos Islands')
         # Other introductory content
 
     elif choice == "LST":
