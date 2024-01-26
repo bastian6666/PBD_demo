@@ -3,6 +3,7 @@ from streamlit_keplergl import keplergl_static
 import json
 import geopandas as gpd
 from keplergl import KeplerGl
+import time
 
 # Load the GeoJSON data directly
 @st.cache_data
@@ -56,6 +57,7 @@ def main():
 
     if choice == "Home":
         st.title("Pale Blue Dot Challenge 2024 - Team: EE Frogs")
+        st.text("By: Alice Ni, Sebastian Sanchez, and Trenton Mulick")
 
         # Using markdown for formatted text
         st.markdown("""
@@ -79,6 +81,18 @@ def main():
         st.title("LST Data")
         lst_option = st.selectbox("Choose format for LST", ("Map", "Image"))
         if lst_option == "Map":
+            # Start the loading process
+            latest_iteration = st.empty()
+            bar = st.progress(0)
+            # Simulate a loading process
+            for i in range(100):
+                latest_iteration.text(f'Loading {i+1}%')
+                bar.progress(i + 1)
+                time.sleep(0.1)  # Simulate a delay
+
+            # Clear the progress bar placeholder after loading is complete
+            latest_iteration.empty()
+            bar.empty()
             geojson_data = load_geojson()
             display_map(geojson_data)
         else:
@@ -89,6 +103,18 @@ def main():
         st.title("NDVI Data")
         ndvi_option = st.selectbox("Choose format for NDVI", ("Map", "Image"))
         if ndvi_option == "Map":
+            # Start the loading process
+            latest_iteration = st.empty()
+            bar = st.progress(0)
+            # Simulate a loading process
+            for i in range(100):
+                latest_iteration.text(f'Loading {i+1}%')
+                bar.progress(i + 1)
+                time.sleep(0.2)  # Simulate a delay
+
+            # Clear the progress bar placeholder after loading is complete
+            latest_iteration.empty()
+            bar.empty()
             geojson_data = load_geojson2()
             display_map(geojson_data)
         else:
