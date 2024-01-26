@@ -105,6 +105,7 @@ def main():
         st.image('NDVI_suitability.png', caption='Vegetation index analysis')
         st.image('DEM_suitability.png', caption='Elevation analysis')
         st.image('Slope_suitability.png', caption='Slope analysis')
+        st.image('final.png', caption='Final results')
             
 
 if __name__ == "__main__":
