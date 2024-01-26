@@ -2,4 +2,3 @@ streamlit
 geopandas
 streamlit_keplergl
 keplergl
-time
