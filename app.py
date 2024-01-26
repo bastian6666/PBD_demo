@@ -56,12 +56,16 @@ def main():
     choice = st.sidebar.radio("Choose a view", ("Home", "LST", "NDVI", "DEM", "Suitability analysis"))
 
     if choice == "Home":
+        
+
         st.title("Pale Blue Dot Challenge 2024 - Team: EE Frogs")
         st.text("By: Alice Ni, Sebastian Sanchez, and Trenton Mulick")
 
+        # Adding a visual element - e.g., an image or graph
+        st.image('final.png', caption='Turks and Caicos Islands')
+
         # Using markdown for formatted text
         st.markdown("""
-            ## Solar Panel Suitability Analysis for the Turks and Caicos Islands
             The website showcases a comprehensive project focused on assessing the suitability for solar panel installation in the Turks and Caicos Islands. This project is grounded in an analysis of various key geographical and environmental factors that are crucial in determining the optimal locations for solar energy harvesting. The analysis incorporates a detailed examination of the Land Surface Temperature (LST), the Normalized Difference Vegetation Index (NDVI), elevation profiles, and the slope of the terrain across the islands. By evaluating the LST, the project identifies areas with the most suitable temperature conditions for solar panel efficiency (Between 20 and 26 Cº). The NDVI analysis helps in understanding vegetation density, which is vital for selecting areas with minimal shading on the panels. Elevation and slope analyses ensure that areas chosen for solar panel installation are not only accessible but also receive maximum sunlight exposure. This approach ensures that the most strategic and efficient locations are identified for solar panel installation, thereby maximizing energy output and contributing to the sustainable energy goals of the Turks and Caicos Islands.
             
             ### How to Use:
@@ -74,9 +78,6 @@ def main():
             - You can select to view either maps or images for LST and NDVI.
         """)
 
-        # Adding a visual element - e.g., an image or graph
-        st.image('final.png', caption='Turks and Caicos Islands')
-        # Other introductory content
 
     elif choice == "LST":
         st.title("LST Data")
