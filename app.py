@@ -65,6 +65,7 @@ def main():
             The website showcases a comprehensive project focused on assessing the suitability for solar panel installation in the Turks and Caicos Islands. This project is grounded in an analysis of various key geographical and environmental factors that are crucial in determining the optimal locations for solar energy harvesting. The analysis incorporates a detailed examination of the Land Surface Temperature (LST), the Normalized Difference Vegetation Index (NDVI), elevation profiles, and the slope of the terrain across the islands. By evaluating the LST, the project identifies areas with the most suitable temperature conditions for solar panel efficiency (Between 20 and 26 Cº). The NDVI analysis helps in understanding vegetation density, which is vital for selecting areas with minimal shading on the panels. Elevation and slope analyses ensure that areas chosen for solar panel installation are not only accessible but also receive maximum sunlight exposure. This approach ensures that the most strategic and efficient locations are identified for solar panel installation, thereby maximizing energy output and contributing to the sustainable energy goals of the Turks and Caicos Islands.
             
             ### How to Use:
+            - Video tutorial: https://drive.google.com/file/d/1EzTE_mazR5K7DLD3YwPodVfBMJ85EwdZ/view?usp=share_link
             - Use the sidebar to navigate between different views.
             - Choose **LST** to explore land surface temperature data.
             - Choose **NDVI** to view vegetation index data.
