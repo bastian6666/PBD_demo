@@ -46,29 +46,33 @@ def display_lst_image():
 def display_ndvi_image():
     st.image('NDVI_TCA.png', caption='NDVI Image')
 
+# Function to display NDVI image
+def display_dem_image():
+    st.image('dem_image.png', caption='NDVI Image')
+
 def main():
     st.sidebar.title("Navigation")
-    choice = st.sidebar.radio("Choose a view", ("Home", "LST", "NDVI"))
+    choice = st.sidebar.radio("Choose a view", ("Home", "LST", "NDVI", "DEM", "Suitability analysis"))
 
     if choice == "Home":
         st.title("Pale Blue Dot Challenge 2024 - Team: EE Frogs")
-        st.write("Navigate using the sidebar.")
 
         # Using markdown for formatted text
         st.markdown("""
             ## Explore Geospatial Data
-            This application allows you to interact with different types of geospatial data. 
-            You can view maps and images related to **Land Surface Temperature (LST)** and **Normalized Difference Vegetation Index (NDVI)**.
+            The website showcases a comprehensive project focused on assessing the suitability for solar panel installation in the Turks and Caicos Islands. This project is grounded in an analysis of various key geographical and environmental factors that are crucial in determining the optimal locations for solar energy harvesting. The analysis incorporates a detailed examination of the Land Surface Temperature (LST), the Normalized Difference Vegetation Index (NDVI), elevation profiles, and the slope of the terrain across the islands. By evaluating the LST, the project identifies areas with the most suitable temperature conditions for solar panel efficiency (Between 20 and 26 Cº). The NDVI analysis helps in understanding vegetation density, which is vital for selecting areas with minimal shading on the panels. Elevation and slope analyses ensure that areas chosen for solar panel installation are not only accessible but also receive maximum sunlight exposure. This approach ensures that the most strategic and efficient locations are identified for solar panel installation, thereby maximizing energy output and contributing to the sustainable energy goals of the Turks and Caicos Islands.
             
             ### How to Use:
             - Use the sidebar to navigate between different views.
             - Choose **LST** to explore land surface temperature data.
             - Choose **NDVI** to view vegetation index data.
-            - You can select to view either maps or images for each data type.
+            - Choose **DEM** to view digital elevation model data.
+            - Choose **Suitability analysis** to view suitability analysis.
+            - You can select to view either maps or images for LST and NDVI.
         """)
 
         # Adding a visual element - e.g., an image or graph
-        st.image('home_image.png', caption='Turks and Caicos Islands')
+        st.image('final.png', caption='Turks and Caicos Islands')
         # Other introductory content
 
     elif choice == "LST":
@@ -89,6 +93,18 @@ def main():
             display_map(geojson_data)
         else:
             display_ndvi_image()
+
+    elif choice == "DEM":
+        st.title("DEM Data")
+        #dem_option = st.selectbox("Choose format for DEM", ("Image"))
+        display_dem_image()
+
+    elif choice == "Suitability analysis":
+        st.title("Suitability analysis")
+        st.image('LST_suitability.png', caption='Surface temperature analysis')
+        st.image('NDVI_suitability.png', caption='Vegetation index analysis')
+        st.image('DEM_suitability.png', caption='Elevation analysis')
+        st.image('Slope_suitability.png', caption='Slope analysis')
             
 
 if __name__ == "__main__":
